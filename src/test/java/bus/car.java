@@ -33,7 +33,7 @@ public class car {
           m=Integer.parseInt(br2.readLine());
         }catch(IOException ex){}
         if(m==1){
-          String select="select * from bus.bus.qiche";
+          String select="select * from bus.qiche";
           ResultSet rs=st.executeQuery(select);
           Wrap.Qtitle();
           while(rs.next()){
@@ -44,7 +44,7 @@ public class car {
             System.out.println(a+"\t"+b+"\t"+c+"\t"+d);
           } }
         if(m==2){
-          String select="select * from bus.bus.xianlu";
+          String select="select * from bus.xianlu";
           ResultSet rs=st.executeQuery(select);
           Wrap.Xtitle();
           while(rs.next()){
@@ -55,7 +55,7 @@ public class car {
             System.out.println(a+"\t"+b+"\t"+c+"\t"+d+"h");
           }}
         if(m==3){
-          String select="select * from bus.bus.chepiao";
+          String select="select * from bus.chepiao";
           ResultSet rs=st.executeQuery(select);
           Wrap.Ctitle();
           while(rs.next()){
@@ -101,7 +101,7 @@ public class car {
             c4=br.readLine();
           }catch(IOException ex){}
           System.out.println("c4="+c4);
-          String insert="insert into bus.bus.qiche(bianhao,zhonglei,zaike,piaojia)values" +
+          String insert="insert into bus.qiche(bianhao,zhonglei,zaike,piaojia)values" +
                   "('"+c1+"','"+c2+"','"+c3+"','"+c4+"')";
           DaoCon.getConnection().createStatement().executeUpdate(insert);
           System.out.println("插入成功!");
@@ -136,7 +136,7 @@ public class car {
           System.out.println("c4="+c4);
 
           System.out.println("插入成功!");
-          String insert="insert into bus.bus.xianlu(bianhao,chufadi,mudidi,shijian)values" +
+          String insert="insert into bus.xianlu(bianhao,chufadi,mudidi,shijian)values" +
                   "('"+c1+"','"+c2+"','"+c3+"','"+c4+"')";
           DaoCon.getConnection().createStatement().executeUpdate(insert);
 
@@ -169,7 +169,7 @@ public class car {
             c4=br.readLine();
           }catch(IOException ex){}
           System.out.println("c4="+c4);
-          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("insert into bus.bus.chepiao values(?,?,?,?)");
+          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("insert into bus.chepiao values(?,?,?,?)");
           pstmt2.setString(1,c1);
           pstmt2.setString(2,c2);
           pstmt2.setString(3,c3);
@@ -195,7 +195,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             m11=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.bus.qiche where bianhao=?");
+          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.qiche where bianhao=?");
           pstmt31.setString(1,m11);
           ResultSet rs3=pstmt31.executeQuery();
           if(rs3.next()){
@@ -210,7 +210,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.qiche set zhonglei=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.qiche set zhonglei=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -222,7 +222,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.qiche set zaike=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.qiche set zaike=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -235,7 +235,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.qiche set piaojia=? where bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.qiche set piaojia=? where bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -252,7 +252,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             m11=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.bus.xianlu where bianhao=?");
+          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.xianlu where bianhao=?");
           pstmt31.setString(1,m11);
           ResultSet rs3=pstmt31.executeQuery();
           if(rs3.next()){
@@ -267,7 +267,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.xianlu set chufadi=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.xianlu set chufadi=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -279,7 +279,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.xianlu set mudidi=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.xianlu set mudidi=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -292,7 +292,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.xianlu set shijian=? where bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.xianlu set shijian=? where bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -310,7 +310,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             m11=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.bus.chepiao where bianhao=?");
+          PreparedStatement pstmt31=DaoCon.getConnection().prepareStatement("select * from bus.chepiao where bianhao=?");
           pstmt31.setString(1,m11);
           ResultSet rs3=pstmt31.executeQuery();
           if(rs3.next()){
@@ -325,7 +325,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.chepiao set shoupiao=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.chepiao set shoupiao=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -338,7 +338,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.chepiao set shengyu=? where  bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.chepiao set shengyu=? where  bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -352,7 +352,7 @@ public class car {
                 m13=br.readLine();
               }catch(IOException ex){}
               pstmt31.close();
-              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.bus.chepiao set yishou=? where bianhao=?");
+              PreparedStatement pstmt3=DaoCon.getConnection().prepareStatement("Update bus.chepiao set yishou=? where bianhao=?");
               pstmt3.setString(1,m13);
               pstmt3.setString(2,m11);
               pstmt3.executeUpdate();
@@ -381,7 +381,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             S1=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.bus.qiche where bianhao=?");
+          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.qiche where bianhao=?");
           pstmt2.setString(1,S1);
           pstmt2.executeUpdate();
           System.out.println("已删除!");
@@ -394,7 +394,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             S2=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.bus.xianlu where bianhao=?");
+          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.xianlu where bianhao=?");
           pstmt2.setString(1,S2);
           pstmt2.executeUpdate();
           System.out.println("已删除!");
@@ -407,7 +407,7 @@ public class car {
             BufferedReader br=new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             S3=br.readLine();
           }catch(IOException ex){}
-          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.bus.chepiao where bianhao=? ");
+          PreparedStatement pstmt2=DaoCon.getConnection().prepareStatement("delete from bus.chepiao where bianhao=? ");
           pstmt2.setString(1,S3);
           pstmt2.executeUpdate();
           System.out.println("已删除!");

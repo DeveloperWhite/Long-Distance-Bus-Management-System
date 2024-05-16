@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DaoCon {
-  static String driverName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-  static String dbURL = "jdbc:sqlserver://localhost:1433";
-  static String userName = "SA";
-  static String userPwd = "Y.sa123456"; // 设置与 SQL Server 容器相同的密码
+  static String driverName = "com.mysql.cj.jdbc.Driver";
+  static String dbURL = "jdbc:mysql://localhost:3306/";
+  static String userName = "root";
+  static String userPwd = "123456"; // 设置与 SQL Server 容器相同的密码
 
   public static Connection getConnection() throws SQLException {
     Connection con = null;
